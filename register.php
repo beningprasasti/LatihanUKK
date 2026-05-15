@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 
+
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
@@ -24,8 +25,10 @@ if (isset($_POST['register'])) {
         header("Location: login.php");
         exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
-    }
+            $error = "gagal"; 
+        }
+    
+
 ?>
 
 <!DOCTYPE html>
